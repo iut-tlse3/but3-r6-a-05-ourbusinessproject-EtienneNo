@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @NotBlank
