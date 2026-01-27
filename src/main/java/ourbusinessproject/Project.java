@@ -3,6 +3,7 @@ package ourbusinessproject;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.mapping.Collection;
 
 @Entity
 public class Project {

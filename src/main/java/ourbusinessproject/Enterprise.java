@@ -95,4 +95,19 @@ public class Enterprise {
     public Long getId() {
         return id;
     }
+
+    public Collection<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Collection<Project> projects) {
+        this.projects = projects;
+    }
+
+    public void addProject(Project project) {
+        if (this.projects == null) {
+            this.projects = new ArrayList<>();
+        }
+        this.projects.add(project);
+    }
 }
