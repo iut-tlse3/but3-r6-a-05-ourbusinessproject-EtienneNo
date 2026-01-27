@@ -2,6 +2,7 @@ package ourbusinessproject;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Project {
@@ -15,6 +16,7 @@ public class Project {
     private String description;
 
     @ManyToOne
+    @NotNull
     private Enterprise enterprise;
 
     /**
@@ -51,5 +53,13 @@ public class Project {
 
     public Long getId() {
         return id;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
+    public Enterprise getEnterprise() {
+        return this.enterprise;
     }
 }

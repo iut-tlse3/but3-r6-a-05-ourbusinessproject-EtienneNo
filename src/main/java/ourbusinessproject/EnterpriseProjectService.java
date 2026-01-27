@@ -19,11 +19,12 @@ public class EnterpriseProjectService {
         return this.entityManager;
     }
 
-    public Project newProject(String title, String description) {
+    public Project newProject(String title, String description, Enterprise enterprise) {
         Project project = new Project();
 
         project.setTitle(title);
         project.setDescription(description);
+        project.setEnterprise(enterprise);
 
         this.entityManager.persist(project);
         this.entityManager.flush();
