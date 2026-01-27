@@ -1,21 +1,21 @@
 package ourbusinessproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @NotBlank
     private String title;
 
     private String description;
+
+    @ManyToOne
+    private Enterprise enterprise;
 
     /**
      * Set the title
@@ -47,5 +47,9 @@ public class Project {
      */
     public String getDescription() {
         return description;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

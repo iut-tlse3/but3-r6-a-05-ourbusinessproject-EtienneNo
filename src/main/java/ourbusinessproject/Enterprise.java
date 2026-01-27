@@ -1,17 +1,17 @@
 package ourbusinessproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Enterprise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @NotBlank
     private String name;
@@ -24,6 +24,9 @@ public class Enterprise {
 
     @NotBlank @Email
     private String contactEmail;
+
+    @OneToMany(mappedBy = "enterprise")
+    private Collection<Project> projects;
 
     /**
      * Get the name
@@ -87,5 +90,9 @@ public class Enterprise {
      */
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
