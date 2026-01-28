@@ -1,6 +1,7 @@
 package ourbusinessproject;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Collection;
 
 @Service
+@Transactional
 public class EnterpriseProjectService {
     @PersistenceContext
     private EntityManager entityManager;
