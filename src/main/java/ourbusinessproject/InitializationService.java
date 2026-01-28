@@ -13,6 +13,12 @@ public class InitializationService {
     private Enterprise e1,e2;
     public void initProjects(){
 
+        /*
+        Après l'insertion d'un projet non valide (titre null) on peut observer qu'aucun projet n'a été créé.
+        Ceci est tout à fait normal grâce à l'utilisation du @Transaction,
+        Si une requête lève une exception, toute la fonction est rollback et on revient à l'état initial.
+         */
+
         this.e1 = this.enterpriseProjectService.newEnterprise("~Enterprise 1", "First Enterprise", "First Contact", "firstcontact@email.com");
         this.e2 = this.enterpriseProjectService.newEnterprise("~Enterprise 2", "Second Enterprise", "Second Contact", "secondcontact@email.com");
 
