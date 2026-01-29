@@ -3,9 +3,10 @@ package ourbusinessproject;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class Bootstrap {
     @Autowired
     private InitializationService initializationService;
