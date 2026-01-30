@@ -16,11 +16,11 @@ public class Partnership {
     private Date creationDate;
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Enterprise enterprise;
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Project project;
 
     public void setCreationDate(Date creationDate) {

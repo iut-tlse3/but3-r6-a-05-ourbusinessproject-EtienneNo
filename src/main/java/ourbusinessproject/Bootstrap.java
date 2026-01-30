@@ -23,6 +23,7 @@ public class Bootstrap {
     public void init(){
         try {
             this.initializationService.initProjects();
+            this.initializationService.initPartnerships();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
